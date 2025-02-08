@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dzhoe Coder - WhatsApp Bot Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">   
+</head>
+<body>
+    <!-- Theme Toggle Switch -->
+    <div class="theme-toggle" onclick="toggleTheme()">
+        <div class="theme-toggle-circle"></div>
+    </div>
+
+    <nav class="nav-container">
+        <div class="nav-content">
+            <div class="profile">
+                <div class="profile-img">
+                    <img src="https://avatars.githubusercontent.com/DzhoeCoder" alt="Dzhoe Coder Profile">
+                </div>
+                <span class="profile-name">Dzhoe Coder</span>
+            </div>
+            <div class="nav-links">
+                <a href="https://wa.me/6285725746476?text=hai">Contact</a>
+                <a href="https://chat.whatsapp.com/Ft0Bim7S6ML7yPukboNnR7">Community</a>
+                <a href="https://github.com/DzhoeCoder" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/dzhoe-coder-99ba57347/" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="header animate-fade-in">
+            <h1>WhatsApp Bot Service</h1>
+            <p>Enhance your WhatsApp experience with our premium bot services</p>
+        </header>
+
+        <div class="card animate-fade-in" style="animation-delay: 0.2s">
+            <h2>Sewa Bot</h2>
+            <ul class="price-list">
+                <li>Rp 5.000 (15 hari)</li>
+                <li>Rp 10.000 (30 hari)</li>
+                <li>Rp 20.000 (45 hari)</li>
+                <li>Rp 35.000 (permanent)</li>
+            </ul>
+            <a href="https://wa.me/6285725746476?text=Saya%20tertarik%20untuk%20sewa%20bot" class="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> Pesan Sekarang
+            </a>
+            <div class="benefits">
+                <h3>Keuntungan sewa:</h3>
+                <p>Fitur premium pada bot WhatsApp sangat mempermudah Anda dalam menggunakan bot WhatsApp Yae-Miko seperti akses chat di dalam pribadi, penggunaan unlimited, dan akses semua fitur yang terkunci di dalam bot Yae-Miko. Silakan bertanya kepada owner untuk selengkapnya</p>
+            </div>
+        </div>
+
+        <div class="card animate-fade-in" style="animation-delay: 0.4s">
+            <h2>Premium Bot</h2>
+            <ul class="price-list">
+                <li>Rp 5.000 (18 hari)</li>
+                <li>Rp 10.000 (36 hari)</li>
+                <li>Rp 20.000 (54 hari)</li>
+                <li>Rp 35.000 (72 hari)</li>
+                <li>Rp 45.000 (permanent)</li>
+            </ul>
+            <a href="https://wa.me/6285725746476?text=Saya%20tertarik%20untuk%20premium%20bot" class="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> Pesan Sekarang
+            </a>
+            <div class="benefits">
+                <h3>Keuntungan premium:</h3>
+                <p>Fitur premium pada bot WhatsApp sangat mempermudah Anda dalam menggunakan bot WhatsApp Yae-Miko seperti akses chat di dalam pribadi, penggunaan unlimited, dan akses semua fitur yang terkunci di dalam bot Yae-Miko. Silakan bertanya kepada owner untuk selengkapnya.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-2">
+    <div class="card animate-fade-in" style="animation-delay: 0.4s">
+        <h2>Jadi Bot PLan</h2>
+        <ul class="price-list">
+            <img src="yaemiko.jpg" width="500" height="auto"/>
+            <li>Rp 30.000 (1 Bulan)</li>
+            <li>Rp 45.000 (3 Bulan)</li>
+            <li>Rp 55.000 (5 Bulan)</li>
+            <li>Rp 70.000 (8 Bulan)</li>
+        </ul>
+        <a href="https://wa.me/6285725746476?text=Saya%20tertarik%20untuk%20premium%20bot" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i> Pesan Sekarang
+        </a>
+        <div class="benefits">
+            <h3>Keuntungan premium:</h3>
+            <p>Fitur jadibot pada bot WhatsApp sangat mempermudah Anda dalam menggunakan bot WhatsApp Yae-Miko seperti akses chat di dalam pribadi, penggunaan unlimited, dan akses semua fitur yang terkunci di dalam bot Yae-Miko. Silakan bertanya kepada owner untuk selengkapnya.</p>
+        </div>
+        </div>
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            if (html.className === 'light') {
+                html.className = 'dark';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.className = 'light';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+       
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.className = savedTheme;
+    </script>
+</body>
+</html>
