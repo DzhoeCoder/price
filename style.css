@@ -170,19 +170,10 @@ transform: rotate(10deg);
 
 .container {
     max-width: 1200px;
+    min-height: 100vh;
+    height: auto;
     margin: 100px auto 0;
     padding: 0 1.5rem;
-}
-
-.container-2 {
-    max-width: 1200px;
-    margin-bottom: 2rem;
-    padding: 0 1.5rem;
-    float: left;
-    margin-right: 10px;
-    position: absolute;
-    top: 1680px;
-    left: 325px;
 }
 
 .header {
@@ -301,3 +292,4 @@ transform: rotate(10deg);
         top: 1680px;
         left: 700px;
     }
+    
