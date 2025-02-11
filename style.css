@@ -64,7 +64,7 @@ body {
 .theme-toggle::after {
     content: '☀';
     position: absolute;
-    right: 5px;
+    right: 10px;
     font-size: 14px;
 }
 
@@ -282,5 +282,20 @@ transform: rotate(10deg);
     .theme-toggle {
         top: 1rem;
         right: 1rem;
+    }
+}
+
+@media  screen and (max-width: 375px) {
+    .header {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: rgb(255, 255, 255);
+        padding: 2rem 2rem;
+        border-radius: 20px;
+        margin-bottom: 2rem;
+        margin-top: 13rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(255, 0, 0, 0.1);
     }
 }
