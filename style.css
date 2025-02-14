@@ -194,14 +194,14 @@ html.dark .theme-toggle-circle {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .card {
     background: var(--bg-card);
     border-radius: 16px;
     padding: 2rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: auto-fit;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid var(--card-border);
@@ -246,6 +246,23 @@ html.dark .theme-toggle-circle {
     box-shadow: 0 10px 15px -3px rgba(37, 211, 102, 0.4);
 }
 
+.benefits {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--bg-main);
+    border-radius: 12px;
+}
+
+.benefits h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.benefits p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -257,7 +274,7 @@ html.dark .theme-toggle-circle {
     }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 767px) {
     .nav-content {
         flex-direction: column;
         gap: 1rem;
@@ -284,4 +301,4 @@ html.dark .theme-toggle-circle {
         transition: none !important;
         animation: none !important;
     }
-}
+                                }
