@@ -52,14 +52,14 @@ body {
 }
 
 .theme-toggle::before {
-    content: '🌙';
+    content: '';
     position: absolute;
     left: 5px;
     font-size: 14px;
 }
 
 .theme-toggle::after {
-    content: '☀';
+    content: '';
     position: absolute;
     right: 10px;
     font-size: 14px;
