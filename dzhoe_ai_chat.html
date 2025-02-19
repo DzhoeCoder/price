@@ -50,6 +50,9 @@
         const sendButton = document.getElementById('sendButton');
         const themeToggle = document.getElementById('themeToggle');
         const suggestionsChips = document.querySelectorAll('.suggestion-chip');
+        
+        // AI avatar image URL
+        const aiAvatarUrl = "https://qu.ax/hDXmY.jpeg";
 
         // Store conversation history
         let conversationHistory = [];
@@ -118,6 +121,38 @@
             const avatar = document.createElement('div');
             avatar.className = `avatar ${isUser ? 'user' : 'ai'}`;
             
+            if (!isUser) {
+                // Use custom image for AI avatar
+                avatar.classList.add('with-image');
+                const imgElement = document.createElement('img');
+                imgElement.src = aiAvatarUrl;
+                imgElement.alt = "AI Avatar";
+                imgElement.onerror = function() {
+                    // If image fails to load, fallback to the SVG icon
+                    avatar.classList.remove('with-image');
+                    createSvgIcon(avatar, isUser);
+                };
+                avatar.appendChild(imgElement);
+            } else {
+                createSvgIcon(avatar, isUser);
+            }
+
+            const message = document.createElement('div');
+            message.className = `message ${isUser ? 'user' : 'ai'} ${isError ? 'error-message' : ''}`;
+            message.textContent = content;
+
+            if (isUser) {
+                messageGroup.appendChild(message);
+                messageGroup.appendChild(avatar);
+            } else {
+                messageGroup.appendChild(avatar);
+                messageGroup.appendChild(message);
+            }
+
+            return messageGroup;
+        }
+        
+        function createSvgIcon(avatar, isUser) {
             const iconSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
             iconSvg.setAttribute("width", "16");
             iconSvg.setAttribute("height", "16");
@@ -135,20 +170,6 @@
             }
 
             avatar.appendChild(iconSvg);
-
-            const message = document.createElement('div');
-            message.className = `message ${isUser ? 'user' : 'ai'} ${isError ? 'error-message' : ''}`;
-            message.textContent = content;
-
-            if (isUser) {
-                messageGroup.appendChild(message);
-                messageGroup.appendChild(avatar);
-            } else {
-                messageGroup.appendChild(avatar);
-                messageGroup.appendChild(message);
-            }
-
-            return messageGroup;
         }
 
         function createTypingIndicator() {
@@ -157,19 +178,28 @@
             messageGroup.id = 'typingIndicator';
             
             const avatar = document.createElement('div');
-            avatar.className = 'avatar ai';
+            avatar.className = 'avatar ai with-image';
             
-            const iconSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-            iconSvg.setAttribute("width", "16");
-            iconSvg.setAttribute("height", "16");
-            iconSvg.setAttribute("viewBox", "0 0 24 24");
-            iconSvg.setAttribute("fill", "none");
-            iconSvg.setAttribute("stroke", "currentColor");
-            iconSvg.setAttribute("stroke-width", "2");
-            iconSvg.setAttribute("stroke-linecap", "round");
-            iconSvg.setAttribute("stroke-linejoin", "round");
-            iconSvg.innerHTML = '<path d="M12 2a10 10 0 0 1 10 10a10 10 0 0 1-10 10A10 10 0 0 1 2 12A10 10 0 0 1 12 2m0 6a4 4 0 0 0-4 4a4 4 0 0 0 4 4a4 4 0 0 0 4-4a4 4 0 0 0-4-4"></path>';
-            avatar.appendChild(iconSvg);
+            // Use custom image for typing indicator avatar
+            const imgElement = document.createElement('img');
+            imgElement.src = aiAvatarUrl;
+            imgElement.alt = "AI Avatar";
+            imgElement.onerror = function() {
+                // If image fails to load, fallback to the SVG icon
+                avatar.classList.remove('with-image');
+                const iconSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                iconSvg.setAttribute("width", "16");
+                iconSvg.setAttribute("height", "16");
+                iconSvg.setAttribute("viewBox", "0 0 24 24");
+                iconSvg.setAttribute("fill", "none");
+                iconSvg.setAttribute("stroke", "currentColor");
+                iconSvg.setAttribute("stroke-width", "2");
+                iconSvg.setAttribute("stroke-linecap", "round");
+                iconSvg.setAttribute("stroke-linejoin", "round");
+                iconSvg.innerHTML = '<path d="M12 2a10 10 0 0 1 10 10a10 10 0 0 1-10 10A10 10 0 0 1 2 12A10 10 0 0 1 12 2m0 6a4 4 0 0 0-4 4a4 4 0 0 0 4 4a4 4 0 0 0 4-4a4 4 0 0 0-4-4"></path>';
+                avatar.appendChild(iconSvg);
+            };
+            avatar.appendChild(imgElement);
 
             const message = document.createElement('div');
             message.className = 'message ai';
